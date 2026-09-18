@@ -1,4 +1,4 @@
-import { GraduationCap, BookOpen, ChevronRight, Calendar } from 'lucide-react';
+import { BookOpen, ChevronRight, Calendar } from 'lucide-react';
 import AnimatedSection from './ui/AnimatedSection';
 import SectionHeader from './ui/SectionHeader';
 import { education } from '../data/portfolioData';

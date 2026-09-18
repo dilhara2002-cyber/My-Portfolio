@@ -19,13 +19,7 @@ function getGHCategory(repo: GitHubRepo) {
   return 'development';
 }
 
-function getGHTags(repo: GitHubRepo): string[] {
-  const enriched = projectEnrichment[repo.name];
-  if (enriched?.tags) return enriched.tags;
-  const tags: string[] = [];
-  if (repo.language) tags.push(repo.language);
-  return tags;
-}
+
 
 const categoryIcon: Record<string, React.ReactNode> = {
   cybersecurity: <Shield className="w-4 h-4 text-blue-400" />,
@@ -285,7 +279,6 @@ function StaticProjectCard({ project }: { project: StaticProject }) {
 // ── GitHub Repo Card ────────────────────────────────────────
 function GHRepoCard({ repo }: { repo: GitHubRepo }) {
   const category = getGHCategory(repo);
-  const tags = getGHTags(repo);
   const tagClass = categoryTagClass[category] || 'tag-dev';
 
   const formatDate = (d: string) =>
